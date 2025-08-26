@@ -7,23 +7,27 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Xin chào, mình là Đạt 👋</h1>
-    <p>Lập trình viên tương lai | Sinh viên CNTT</p>
-  </header>
+  <div class="profile-card">
+    <h1>Hồ sơ cá nhân</h1>
+    
+    <!-- Ảnh đại diện -->
+    <div class="avatar-wrapper">
+      <img id="avatar" src="default-avatar.png" alt="Ảnh đại diện">
+    </div>
 
-  <section class="about">
-    <h2>Giới thiệu</h2>
-    <p>Mình thích lập trình web, C++, và học về công nghệ mới.</p>
-  </section>
+    <!-- Chọn ảnh mới -->
+    <label class="upload-btn">
+      Cập nhật ảnh
+      <input type="file" id="upload" accept="image/*">
+    </label>
 
-  <section class="contact">
-    <h2>Liên hệ</h2>
-    <ul>
-      <li>Email: <a href="mailto:example@gmail.com">example@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/YourUsername">YourUsername</a></li>
-      <li>Facebook: <a href="#">facebook.com/yourprofile</a></li>
-    </ul>
-  </section>
+    <!-- Thông tin -->
+    <div class="info">
+      <h2 id="name">Nguyễn Văn A</h2>
+      <p id="bio">Sinh viên Công nghệ thông tin. Yêu thích lập trình web.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-</html> 
+</html>
