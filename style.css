@@ -34,13 +34,42 @@ body::before {
     100% {background-position: 60% 60%;}
 }
 .profile-container {
-    background: #222;
+    background: linear-gradient(135deg, #ffe5ec 0%, #e0c3fc 20%, #ffd6e0 40%, #fff7ba 60%, #b3e0ff 80%, #ffc3a0 100%);
     padding: 20px;
     border-radius: 12px;
     width: 400px;
     margin: auto;
     box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
     color: #fafafa;
+    position: relative;
+    /* Thêm viền led RGB động */
+    z-index: 1;
+}
+
+.profile-container::before {
+    content: '';
+    position: absolute;
+    inset: -6px; /* viền ngoài container */
+    border-radius: 16px;
+    padding: 0;
+    background: conic-gradient(
+        #ff0000,
+        #ff8000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff,
+        #ff0000
+    );
+    filter: blur(4px);
+    z-index: -1;
+    animation: rgb-container-rotate 2s linear infinite reverse; /* Ngược chiều avatar */
+}
+
+@keyframes rgb-container-rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
 }
 
 .avatar-section {
