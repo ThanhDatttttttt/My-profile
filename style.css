@@ -1,21 +1,37 @@
 body {
     font-family: Arial, sans-serif;
-    background: radial-gradient(circle at 30% 40%, #ff0080, #ff8c00 30%, #fff700 50%, #00ff85 70%, #00cfff 80%, #3f00ff 100%);
-    background-size: 200% 200%;
-    animation: rainbow-radial 8s linear infinite;
+    background: radial-gradient(circle at 40% 40%, #ffd1dc 0%, #e0c3fc 40%, #fcb7b7 60%, #ffe3b3 80%, #ffd6e0 100%);
+    /* pastel: hồng tím đỏ cam */
+    background-size: 180% 180%;
+    animation: pastel-rgb 10s ease-in-out infinite;
     text-align: center;
     padding: 20px;
+    /* Tạo hiệu ứng blur mờ nền */
+    position: relative;
+    overflow: hidden;
 }
 
-@keyframes rainbow-radial {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1;
+    background: radial-gradient(circle at 60% 60%, #ffb3ba80 0%, #b3e0ff80 40%, #ffc3a080 60%, #e0b3ff80 100%);
+    filter: blur(32px);
+    opacity: 0.7;
+    pointer-events: none;
+    animation: pastel-blur-move 18s linear infinite;
 }
 
-@keyframes rgb-body-rotate {
-    0% { background-position: 0% 50%; }
-    100% { background-position: 100% 50%; }
+@keyframes pastel-rgb {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+@keyframes pastel-blur-move {
+    0% {background-position: 40% 40%;}
+    100% {background-position: 60% 60%;}
 }
 .profile-container {
     background: #222;
