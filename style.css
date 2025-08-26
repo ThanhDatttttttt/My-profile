@@ -1,26 +1,71 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+    background-color: #141414;
     text-align: center;
     padding: 20px;
 }
 
 .profile-container {
-    background: white;
+    background: #222;
     padding: 20px;
     border-radius: 12px;
     width: 400px;
     margin: auto;
-    box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.3);
+    color: #fafafa;
 }
 
-.avatar-section img {
+.avatar-section {
+    margin-bottom: 20px;
+}
+
+.rgb-led-ring {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 170px;
+    height: 170px;
+    margin: 0 auto 10px auto;
+}
+
+.rgb-led-ring::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    padding: 0;
+    background: conic-gradient(
+        #ff0000,
+        #ff8000,
+        #ffff00,
+        #00ff00,
+        #00ffff,
+        #0000ff,
+        #ff00ff,
+        #ff0000
+    );
+    filter: blur(4px);
+    z-index: 1;
+    animation: rgb-rotate 2s linear infinite;
+}
+
+@keyframes rgb-rotate {
+    0% { transform: rotate(0deg);}
+    100% { transform: rotate(360deg);}
+}
+
+.rgb-led-ring img {
+    position: relative;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: 10px;
-    border: 3px solid #e0e0e0;
+    z-index: 2;
+    background: #222;
+    box-shadow: 0 0 15px #000;
+    border: 5px solid #222;
 }
 
 .avatar-section input[type="file"] {
@@ -28,7 +73,7 @@ body {
 }
 
 .error-message {
-    color: #d8000c;
+    color: #ff3b3b;
     font-size: 14px;
     margin-top: 5px;
     height: 18px;
