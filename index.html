@@ -1,33 +1,26 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Profile Cá Nhân</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Cá Nhân</title>
+    <!-- Liên kết CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="profile-card">
-    <h1>Hồ sơ cá nhân</h1>
-    
-    <!-- Ảnh đại diện -->
-    <div class="avatar-wrapper">
-      <img id="avatar" src="default-avatar.png" alt="Ảnh đại diện">
+    <div class="profile-container">
+        <h1>Hồ sơ cá nhân</h1>
+        
+        <div class="avatar-section">
+            <img id="avatar" src="default.png" alt="Ảnh đại diện">
+            <input type="file" id="upload" accept="image/*">
+        </div>
+
+        <h2>Nguyễn Văn A</h2>
+        <p>Sinh viên Công nghệ thông tin. Yêu thích lập trình web.</p>
     </div>
 
-    <!-- Chọn ảnh mới -->
-    <label class="upload-btn">
-      Cập nhật ảnh
-      <input type="file" id="upload" accept="image/*">
-    </label>
-
-    <!-- Thông tin -->
-    <div class="info">
-      <h2 id="name">Nguyễn Văn A</h2>
-      <p id="bio">Sinh viên Công nghệ thông tin. Yêu thích lập trình web.</p>
-    </div>
-  </div>
-
-  <script src="script.js"></script>
+    <!-- Liên kết JS -->
+    <script src="script.js"></script>
 </body>
 </html>
